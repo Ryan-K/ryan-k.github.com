@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Adventures in Development</title>
+  <title>Virtually the only way to go - Adventures in Development</title>
   <meta name="author" content="Ryan Kolak">
 
   
-  <meta name="description" content="Blog Archive 2013 Virtually the only way to go
-May 29 2013 posted in aws, development, vagrant, virtual machines, virtualbox Rebooting Dev Blogging &hellip;">
+  <meta name="description" content="Many developers put a lot of work into getting their projects to run locally on their own machines. While running natively locally may seem easier &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ May 29 2013 posted in aws, development, vagrant, virtual machines, virtualbox Re
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Ryan-K.github.io/blog/archives">
+  <link rel="canonical" href="http://Ryan-K.github.io/blog/2013/05/29/virtually-the-only-way-to-go">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Adventures in Development" type="application/atom+xml">
@@ -77,49 +76,104 @@ May 29 2013 posted in aws, development, vagrant, virtual machines, virtualbox Re
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Virtually the Only Way to Go</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-29T12:37:00-05:00" pubdate data-updated="true">May 29<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Many developers put a lot of work into getting their projects to run locally on their own machines. While running natively locally may seem easier initially, I really feel like you&rsquo;re setting yourself up for failure.</p>
 
-  
-  <h2>2013</h2>
+<p>If you&rsquo;re a Linux user, you&rsquo;re not as likely to encounter some issues, but that likely will just give you a false sense of security. Mac users are slightly worse off since they aren&rsquo;t too far removed from Unix, but there are some definite pitfalls that will trip you up. And Windows developers, I honestly have no idea how you manage to jump through as many hoops as you do to get everything running at all.</p>
 
-<article>
-  
-<h1><a href="/blog/2013/05/29/virtually-the-only-way-to-go/">Virtually the only way to go</a></h1>
-<time datetime="2013-05-29T12:37:00-05:00" pubdate><span class='month'>May</span> <span class='day'>29</span> <span class='year'>2013</span></time>
+<p>Most of this doesn&rsquo;t apply if you&rsquo;re doing mobile app development (Android or iOS), building desktop apps, or working within Microsoft&rsquo;s development environment. By all means, develop as close to your target environment as possible.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/aws/'>aws</a>, <a class='category' href='/blog/categories/development/'>development</a>, <a class='category' href='/blog/categories/vagrant/'>vagrant</a>, <a class='category' href='/blog/categories/virtual-machines/'>virtual machines</a>, <a class='category' href='/blog/categories/virtualbox/'>virtualbox</a></span>
-</footer>
+<p>And that&rsquo;s exactly the point. Your personal machine is not a server. The absolute easiest way to mimic your target environment is to run a virtual machine on your desktop. With the advent of <a href="http://aws.amazon.com">Amazon Web Services (AWS)</a>, there&rsquo;s really no reason to manage your own hardware. AWS allows you to run a server from an image, and a wise developer will use that exact same image locally.</p>
 
+<p>Sure, it takes a bit more resources locally, but running a virtual machine completely isolates changes to your local system from your development environment, allows you to share an exact environment with other developers, and if something goes wrong, you can always rebuild a new box with ease.</p>
 
-</article>
+<p>Sounds like a daunting task? It&rsquo;s actually quite easy to get started&hellip; and its completely free! <a href="http://www.virtualbox.org">VirtualBox</a> is free software, provided by Oracle (by way of their Sun acquisition, and they haven&rsquo;t managed to ruin this at all). It provides the layer that reserves resources on your local machine (the host) and provides it to your virtual machine (the guest).</p>
 
+<p>You could use VirtualBox directly, but there&rsquo;s a few rough spots. I highly recommend another layer on top of VirtualBox that will limit your interactions with VirtualBox to installing it, and applying updates. That layer is <a href="http://www.vagrantup.com">Vagrant</a> which has become an indispensable tool and is widely used.</p>
 
+<p>The combination of VirtualBox and Vagrant is a powerful one. You can run it on Linux, Macs or Windows with ease. Give yourself a couple hours to install and get familiar with them and you&rsquo;ll never look back. It truly is a paradigm shift and you may wonder how you ever got anything done before.</p>
 
-<article>
-  
-<h1><a href="/blog/2013/05/28/rebooting-dev-blogging/">Rebooting Dev Blogging</a></h1>
-<time datetime="2013-05-28T15:10:00-05:00" pubdate><span class='month'>May</span> <span class='day'>28</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/blog/'>blog</a></span>
-</footer>
-
-
-</article>
-
+<p>In future posts, I&rsquo;ll outline installing both and getting a simple application running.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Ryan Kolak</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-29T12:37:00-05:00" pubdate data-updated="true">May 29<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/aws/'>aws</a>, <a class='category' href='/blog/categories/development/'>development</a>, <a class='category' href='/blog/categories/vagrant/'>vagrant</a>, <a class='category' href='/blog/categories/virtual-machines/'>virtual machines</a>, <a class='category' href='/blog/categories/virtualbox/'>virtualbox</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://Ryan-K.github.io/blog/2013/05/29/virtually-the-only-way-to-go/" data-via="RyanK" data-counturl="http://Ryan-K.github.io/blog/2013/05/29/virtually-the-only-way-to-go/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/05/28/rebooting-dev-blogging/" title="Previous Post: Rebooting Dev Blogging">&laquo; Rebooting Dev Blogging</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

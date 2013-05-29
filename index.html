@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan Kolak">
 
   
-  <meta name="description" content="Development has come a long way in the last 15 years. The scale of things that can be accomplished is amazing. Even more impressive is the rate at &hellip;">
+  <meta name="description" content="Many developers put a lot of work into getting their projects to run locally on their own machines. While running natively locally may seem easier &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,58 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/05/29/virtually-the-only-way-to-go/">Virtually the Only Way to Go</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-29T12:37:00-05:00" pubdate data-updated="true">May 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Many developers put a lot of work into getting their projects to run locally on their own machines. While running natively locally may seem easier initially, I really feel like you&rsquo;re setting yourself up for failure.</p>
+
+<p>If you&rsquo;re a Linux user, you&rsquo;re not as likely to encounter some issues, but that likely will just give you a false sense of security. Mac users are slightly worse off since they aren&rsquo;t too far removed from Unix, but there are some definite pitfalls that will trip you up. And Windows developers, I honestly have no idea how you manage to jump through as many hoops as you do to get everything running at all.</p>
+
+<p>Most of this doesn&rsquo;t apply if you&rsquo;re doing mobile app development (Android or iOS), building desktop apps, or working within Microsoft&rsquo;s development environment. By all means, develop as close to your target environment as possible.</p>
+
+<p>And that&rsquo;s exactly the point. Your personal machine is not a server. The absolute easiest way to mimic your target environment is to run a virtual machine on your desktop. With the advent of <a href="http://aws.amazon.com">Amazon Web Services (AWS)</a>, there&rsquo;s really no reason to manage your own hardware. AWS allows you to run a server from an image, and a wise developer will use that exact same image locally.</p>
+
+<p>Sure, it takes a bit more resources locally, but running a virtual machine completely isolates changes to your local system from your development environment, allows you to share an exact environment with other developers, and if something goes wrong, you can always rebuild a new box with ease.</p>
+
+<p>Sounds like a daunting task? It&rsquo;s actually quite easy to get started&hellip; and its completely free! <a href="http://www.virtualbox.org">VirtualBox</a> is free software, provided by Oracle (by way of their Sun acquisition, and they haven&rsquo;t managed to ruin this at all). It provides the layer that reserves resources on your local machine (the host) and provides it to your virtual machine (the guest).</p>
+
+<p>You could use VirtualBox directly, but there&rsquo;s a few rough spots. I highly recommend another layer on top of VirtualBox that will limit your interactions with VirtualBox to installing it, and applying updates. That layer is <a href="http://www.vagrantup.com">Vagrant</a> which has become an indispensable tool and is widely used.</p>
+
+<p>The combination of VirtualBox and Vagrant is a powerful one. You can run it on Linux, Macs or Windows with ease. Give yourself a couple hours to install and get familiar with them and you&rsquo;ll never look back. It truly is a paradigm shift and you may wonder how you ever got anything done before.</p>
+
+<p>In future posts, I&rsquo;ll outline installing both and getting a simple application running.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/05/28/rebooting-dev-blogging/">Rebooting Dev Blogging</a></h1>
     
     
@@ -133,6 +185,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/29/virtually-the-only-way-to-go/">Virtually the Only Way to Go</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/05/28/rebooting-dev-blogging/">Rebooting Dev Blogging</a>
