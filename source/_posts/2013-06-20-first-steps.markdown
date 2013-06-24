@@ -3,7 +3,7 @@ layout: post
 title: "First Steps"
 date: 2013-06-20 15:05
 comments: true
-categories:
+categories: [vagrant, virtual machines, virtualbox]
 ---
 
 Recently, I described [why development is best handled in a virtual environment][1]. I often hear complaints that its too difficult to setup and get running and that time spent learning something new takes away from valuable development time. So, this post will walk through the steps to go from nothing to installing all the necessary software to getting your first VM up and running.
