@@ -4,7 +4,7 @@
   <title><![CDATA[Adventures in Development]]></title>
   <link href="http://Ryan-K.github.io/atom.xml" rel="self"/>
   <link href="http://Ryan-K.github.io/"/>
-  <updated>2013-06-24T17:24:18-05:00</updated>
+  <updated>2013-06-24T17:54:02-05:00</updated>
   <id>http://Ryan-K.github.io/</id>
   <author>
     <name><![CDATA[Ryan Kolak]]></name>
@@ -18,7 +18,10 @@
     <link href="http://Ryan-K.github.io/blog/2013/06/20/first-steps/"/>
     <updated>2013-06-20T15:05:00-05:00</updated>
     <id>http://Ryan-K.github.io/blog/2013/06/20/first-steps</id>
-    <content type="html"><![CDATA[<p>Recently, I described <a href="http://ryan-k.github.io/blog/2013/05/29/virtually-the-only-way-to-go/">why development is best handled in a virtual environment</a>. I often hear complaints that its too difficult to setup and get running and that time spent learning something new takes away from valuable development time. So, this post will walk through the steps to go from nothing to a working VM running a very simple web service.</p>
+    <content type="html"><![CDATA[<p>Recently, I described <a href="http://ryan-k.github.io/blog/2013/05/29/virtually-the-only-way-to-go/">why development is best handled in a virtual environment</a>. I often hear complaints that its too difficult to setup and get running and that time spent learning something new takes away from valuable development time. So, this post will walk through the steps to go from nothing to installing all the necessary software to getting your first VM up and running.</p>
+
+<!-- more -->
+
 
 <h2>Installing VirtualBox and Vagrant</h2>
 
