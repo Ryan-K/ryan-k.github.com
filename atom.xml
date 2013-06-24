@@ -4,7 +4,7 @@
   <title><![CDATA[Adventures in Development]]></title>
   <link href="http://Ryan-K.github.io/atom.xml" rel="self"/>
   <link href="http://Ryan-K.github.io/"/>
-  <updated>2013-06-24T17:09:48-05:00</updated>
+  <updated>2013-06-24T17:24:18-05:00</updated>
   <id>http://Ryan-K.github.io/</id>
   <author>
     <name><![CDATA[Ryan Kolak]]></name>
@@ -20,7 +20,7 @@
     <id>http://Ryan-K.github.io/blog/2013/06/20/first-steps</id>
     <content type="html"><![CDATA[<p>Recently, I described <a href="http://ryan-k.github.io/blog/2013/05/29/virtually-the-only-way-to-go/">why development is best handled in a virtual environment</a>. I often hear complaints that its too difficult to setup and get running and that time spent learning something new takes away from valuable development time. So, this post will walk through the steps to go from nothing to a working VM running a very simple web service.</p>
 
-<h1>Installing VirtualBox and Vagrant</h1>
+<h2>Installing VirtualBox and Vagrant</h2>
 
 <p>The very first thing to do is to grab both <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> and <a href="http://downloads.vagrantup.com">Vagrant</a> and install them. They both have installers and should install like any other software on your platform of choice. Older versions of the software can have issues, so running the latest of both is pretty important for the most painless experience possible. Also, if you&rsquo;re working on a team with other developers, its often useful to ensure that everyone is working with the same versions of the software as compatibility issue can arise.</p>
 
@@ -28,7 +28,7 @@
 
 <p>Once those are installed, you&rsquo;ll find that there&rsquo;s a GUI interface for VirtualBox that will allow you to manage your VMs. The only time you&rsquo;ll need to go into there is if things get into a bad state and Vagrant gets very confused. Hopefully, that never happens but if you ever find yourself in that situation, firing up VirtualBox and powering down the VM should reset things. The main benefit of Vagrant is not having to deal with VirtualBox.</p>
 
-<h1>Starting your first VM</h1>
+<h2>Starting your first VM</h2>
 
 <p>To get started with your first Virtual Machine, all that you need to do is initialize a virtual machine, start it up and then you can connect to it. In Vagrant, this is done with a few simple commands which should be run from a empty directory where you&rsquo;ll be doing your work from.</p>
 
@@ -102,7 +102,7 @@
 
 <p>Finally, the ssh command will connect you to your brand new ubuntu VM. From here, you can install whatever software you&rsquo;ll need to run your server.</p>
 
-<h1>Configuring your VM</h1>
+<h2>Configuring your VM</h2>
 
 <p>The only change to the defaults I recommend when you&rsquo;re just starting, is to enable bridge networking by uncommenting this line in the auto-generated Vagrantfile by removing the # from the third line:</p>
 
@@ -116,7 +116,7 @@
 
 <p>What this does is enable access to your VM at the specified IP address. That&rsquo;s 192.168.33.10 by default, so if you are running multiple VMs, you&rsquo;ll also want to give each one a unique IP address. This will allow you to connect to any services running on that box via that IP address. The other options are to forward ports on your local machine to the VM. The commented out example in the config would forward port 8080 on your local machine (the host) to port 80 on your VM (the guest). This would allow a webserver running in your VM to be accessed at <a href="http://localhost:8080/">http://localhost:8080/</a> in a web browser on your machine. The other option is to enable public networking, which extends the visibility of your VM outside of your machine. Generally, you won&rsquo;t need to do that.</p>
 
-<h1>Other Vagrant Commands</h1>
+<h2>Other Vagrant Commands</h2>
 
 <p>Finally, there&rsquo;s a few other vagrant commands that are very useful. We have already seen vagrant init, vagrant up and vagrant ssh. When you are finished with this VM and want to release the resources its using, run vagrant suspend or vagrant halt. I prefer vagrant suspend as it preserves the state of the machine, rather then completely powering it off.</p>
 
