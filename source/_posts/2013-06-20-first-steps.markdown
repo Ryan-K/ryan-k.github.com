@@ -6,7 +6,9 @@ comments: true
 categories:
 ---
 
-Recently, I described [why development is best handled in a virtual environment][1]. I often hear complaints that its too difficult to setup and get running and that time spent learning something new takes away from valuable development time. So, this post will walk through the steps to go from nothing to a working VM running a very simple web service.
+Recently, I described [why development is best handled in a virtual environment][1]. I often hear complaints that its too difficult to setup and get running and that time spent learning something new takes away from valuable development time. So, this post will walk through the steps to go from nothing to installing all the necessary software to getting your first VM up and running.
+
+<!-- more -->
 
 Installing VirtualBox and Vagrant
 ---------------------------------
