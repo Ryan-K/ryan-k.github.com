@@ -9,7 +9,7 @@
   <meta name="author" content="Ryan Kolak">
 
   
-  <meta name="description" content="Many developers put a lot of work into getting their projects to run locally on their own machines. While running natively locally may seem easier &hellip;">
+  <meta name="description" content="Recently, I described why development is best handled in a virtual environment. I often hear complaints that its too difficult to setup and get &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,150 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/20/first-steps/">First Steps</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-20T15:05:00-05:00" pubdate data-updated="true">Jun 20<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/20/first-steps/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently, I described <a href="http://ryan-k.github.io/blog/2013/05/29/virtually-the-only-way-to-go/">why development is best handled in a virtual environment</a>. I often hear complaints that its too difficult to setup and get running and that time spent learning something new takes away from valuable development time. So, this post will walk through the steps to go from nothing to a working VM running a very simple web service.</p>
+
+<h1>Installing VirtualBox and Vagrant</h1>
+
+<p>The very first thing to do is to grab both <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> and <a href="http://downloads.vagrantup.com">Vagrant</a> and install them. They both have installers and should install like any other software on your platform of choice. Older versions of the software can have issues, so running the latest of both is pretty important for the most painless experience possible. Also, if you&rsquo;re working on a team with other developers, its often useful to ensure that everyone is working with the same versions of the software as compatibility issue can arise.</p>
+
+<p>In the past, there was an alternative way to install Vagrant via a ruby gem. Thankfully, that&rsquo;s been eliminated as it has caused more confusion and conflicts and requires managing more of the ruby environment on your local workstation. That&rsquo;s something that I never want to have to deal with, ever.</p>
+
+<p>Once those are installed, you&rsquo;ll find that there&rsquo;s a GUI interface for VirtualBox that will allow you to manage your VMs. The only time you&rsquo;ll need to go into there is if things get into a bad state and Vagrant gets very confused. Hopefully, that never happens but if you ever find yourself in that situation, firing up VirtualBox and powering down the VM should reset things. The main benefit of Vagrant is not having to deal with VirtualBox.</p>
+
+<h1>Starting your first VM</h1>
+
+<p>To get started with your first Virtual Machine, all that you need to do is initialize a virtual machine, start it up and then you can connect to it. In Vagrant, this is done with a few simple commands which should be run from a empty directory where you&rsquo;ll be doing your work from.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ vagrant init precise32 http://files.vagrantup.com/precise32.box
+</span><span class='line'>A `Vagrantfile` has been placed in this directory. You are now
+</span><span class='line'>ready to `vagrant up` your first virtual environment! Please read
+</span><span class='line'>the comments in the Vagrantfile as well as documentation on
+</span><span class='line'>`vagrantup.com` for more information on using Vagrant.
+</span><span class='line'>$ vagrant up
+</span><span class='line'>[default] Box 'precise32' was not found. Fetching box from specified URL for
+</span><span class='line'>the provider 'virtualbox'. Note that if the URL does not have
+</span><span class='line'>a box for this provider, you should interrupt Vagrant now and add
+</span><span class='line'>the box yourself. Otherwise Vagrant will attempt to download the
+</span><span class='line'>full box prior to discovering this error.
+</span><span class='line'>Downloading or copying the box...
+</span><span class='line'>Extracting box...
+</span><span class='line'>Successfully added box 'precise32' with provider 'virtualbox'!
+</span><span class='line'>[default] Importing base box 'precise32'...
+</span><span class='line'>[default] Matching MAC address for NAT networking...
+</span><span class='line'>[default] Setting the name of the VM...
+</span><span class='line'>[default] Clearing any previously set forwarded ports...
+</span><span class='line'>[default] Fixed port collision for 22 =&gt; 2222. Now on port 2200.
+</span><span class='line'>[default] Creating shared folders metadata...
+</span><span class='line'>[default] Clearing any previously set network interfaces...
+</span><span class='line'>[default] Preparing network interfaces based on configuration...
+</span><span class='line'>[default] Forwarding ports...
+</span><span class='line'>[default] -- 22 =&gt; 2200 (adapter 1)
+</span><span class='line'>[default] Booting VM...
+</span><span class='line'>[default] Waiting for VM to boot. This can take a few minutes.
+</span><span class='line'>[default] VM booted and ready for use!
+</span><span class='line'>[default] Configuring and enabling network interfaces...
+</span><span class='line'>[default] Mounting shared folders...
+</span><span class='line'>[default] -- /vagrant
+</span><span class='line'>$ vagrant ssh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The first line initializes a new VM, names it &ldquo;precise32&rdquo; and links it to the base box at that URL. There are many options for what to use for a base box. Precise is a recent LTS release of Ubuntu and is a decent choice. You can find many others at <a href="http://www.vagrantbox.es/">http://www.vagrantbox.es/</a> or <a href="http://cloud-images.ubuntu.com/vagrant">http://cloud-images.ubuntu.com/vagrant</a> that you can substitute in place of the URL in the init command. All that really happens at this point is the creation of a &ldquo;Vagrantfile&rdquo; in the current directory which specifies everything about how your VM is configured. Feel free to look through it as common options are included and well documented.</p>
+
+<p>The up command is what actually starts up your VM. Since this is the first time running the VM, it will download the VM image. Depending on your internet connection, this may take quite sometime. Once this completes, the process of actually starting the VM begins and vagrant works its magic. Primarily, this sets up network devices and mounts a shared directory. By default, this enables access of this current folder at &ldquo;/vagrant&rdquo; inside the virtual machine. This is how you&rsquo;ll be able to edit files locally on your desktop in your favorite editor, and inside the VM you&rsquo;ll see the changes reflected.</p>
+
+<p>Finally, the ssh command will connect you to your brand new ubuntu VM. From here, you can install whatever software you&rsquo;ll need to run your server.</p>
+
+<h1>Configuring your VM</h1>
+
+<p>The only change to the defaults I recommend when you&rsquo;re just starting, is to enable bridge networking by uncommenting this line in the auto-generated Vagrantfile by removing the # from the third line:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  # Create a private network, which allows host-only access to the machine
+</span><span class='line'>  # using a specific IP.
+</span><span class='line'>  config.vm.network :private_network, ip: "192.168.33.10"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What this does is enable access to your VM at the specified IP address. That&rsquo;s 192.168.33.10 by default, so if you are running multiple VMs, you&rsquo;ll also want to give each one a unique IP address. This will allow you to connect to any services running on that box via that IP address. The other options are to forward ports on your local machine to the VM. The commented out example in the config would forward port 8080 on your local machine (the host) to port 80 on your VM (the guest). This would allow a webserver running in your VM to be accessed at <a href="http://localhost:8080/">http://localhost:8080/</a> in a web browser on your machine. The other option is to enable public networking, which extends the visibility of your VM outside of your machine. Generally, you won&rsquo;t need to do that.</p>
+
+<h1>Other Vagrant Commands</h1>
+
+<p>Finally, there&rsquo;s a few other vagrant commands that are very useful. We have already seen vagrant init, vagrant up and vagrant ssh. When you are finished with this VM and want to release the resources its using, run vagrant suspend or vagrant halt. I prefer vagrant suspend as it preserves the state of the machine, rather then completely powering it off.</p>
+
+<p>Remember that you&rsquo;ll have to exit your shell or run those commands from another terminal in the same directory as the vagrant commands do not work from within the VM. Vagrant is a tool that runs on your local machine and manages the VMs via VirtualBox. Inside the VM is a clean server environment that knows nothing about vagrant or that its running on your workstation.</p>
+
+<p>Vagrant reload will reboot the VM, which is useful to allow changes in the Vagrantfile to take effect. Finally, vagrant destroy will remove this VM and the storage associated with it. Any changes you made to the system will be lost, but a vagrant up will recreate the VM and give you a clean machine again.</p>
+
+<p>That&rsquo;s all there really is to it! In the next post, I&rsquo;ll introduce my favorite web framework, <a href="http://flask.pocoo.org/">Flask</a>, and get a very simple web service running within a new vagrant box.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -189,6 +333,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/20/first-steps/">First Steps</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/05/29/virtually-the-only-way-to-go/">Virtually the Only Way to Go</a>

@@ -1,24 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Adventures in Development]]></title>
-  <link href="http://Ryan-K.github.io/atom.xml" rel="self"/>
-  <link href="http://Ryan-K.github.io/"/>
-  <updated>2013-06-24T17:09:48-05:00</updated>
-  <id>http://Ryan-K.github.io/</id>
-  <author>
-    <name><![CDATA[Ryan Kolak]]></name>
-    <email><![CDATA[ryan.kolak+blogrss@gmail.com]]></email>
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>First Steps - Adventures in Development</title>
+  <meta name="author" content="Ryan Kolak">
 
   
-  <entry>
-    <title type="html"><![CDATA[First Steps]]></title>
-    <link href="http://Ryan-K.github.io/blog/2013/06/20/first-steps/"/>
-    <updated>2013-06-20T15:05:00-05:00</updated>
-    <id>http://Ryan-K.github.io/blog/2013/06/20/first-steps</id>
-    <content type="html"><![CDATA[<p>Recently, I described <a href="http://ryan-k.github.io/blog/2013/05/29/virtually-the-only-way-to-go/">why development is best handled in a virtual environment</a>. I often hear complaints that its too difficult to setup and get running and that time spent learning something new takes away from valuable development time. So, this post will walk through the steps to go from nothing to a working VM running a very simple web service.</p>
+  <meta name="description" content="Recently, I described why development is best handled in a virtual environment. I often hear complaints that its too difficult to setup and get &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Ryan-K.github.io/blog/2013/06/20/first-steps">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Adventures in Development" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41225476-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adventures in Development</a></h1>
+  
+    <h2>Just another backend developer's blog.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Ryan-K.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">First Steps</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-20T15:05:00-05:00" pubdate data-updated="true">Jun 20<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Recently, I described <a href="http://ryan-k.github.io/blog/2013/05/29/virtually-the-only-way-to-go/">why development is best handled in a virtual environment</a>. I often hear complaints that its too difficult to setup and get running and that time spent learning something new takes away from valuable development time. So, this post will walk through the steps to go from nothing to a working VM running a very simple web service.</p>
 
 <h1>Installing VirtualBox and Vagrant</h1>
 
@@ -125,49 +212,193 @@
 <p>Vagrant reload will reboot the VM, which is useful to allow changes in the Vagrantfile to take effect. Finally, vagrant destroy will remove this VM and the storage associated with it. Any changes you made to the system will be lost, but a vagrant up will recreate the VM and give you a clean machine again.</p>
 
 <p>That&rsquo;s all there really is to it! In the next post, I&rsquo;ll introduce my favorite web framework, <a href="http://flask.pocoo.org/">Flask</a>, and get a very simple web service running within a new vagrant box.</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[Virtually the only way to go]]></title>
-    <link href="http://Ryan-K.github.io/blog/2013/05/29/virtually-the-only-way-to-go/"/>
-    <updated>2013-05-29T12:37:00-05:00</updated>
-    <id>http://Ryan-K.github.io/blog/2013/05/29/virtually-the-only-way-to-go</id>
-    <content type="html"><![CDATA[<p>Many developers put a lot of work into getting their projects to run locally on their own machines. While running natively locally may seem easier initially, I really feel like you&rsquo;re setting yourself up for failure.</p>
 
-<p>If you&rsquo;re a Linux user, you&rsquo;re not as likely to encounter some issues, but that likely will just give you a false sense of security. Mac users are slightly worse off since they aren&rsquo;t too far removed from Unix, but there are some definite pitfalls that will trip you up. And Windows developers, I honestly have no idea how you manage to jump through as many hoops as you do to get everything running at all.</p>
+<span class="byline author vcard">Posted by <span class="fn">Ryan Kolak</span></span>
 
-<p>Most of this doesn&rsquo;t apply if you&rsquo;re doing mobile app development (Android or iOS), building desktop apps, or working within Microsoft&rsquo;s development environment. By all means, develop as close to your target environment as possible.</p>
+      
 
-<p>And that&rsquo;s exactly the point. Your personal machine is not a server. The absolute easiest way to mimic your target environment is to run a virtual machine on your desktop. With the advent of <a href="http://aws.amazon.com">Amazon Web Services (AWS)</a>, there&rsquo;s really no reason to manage your own hardware. AWS allows you to run a server from an image, and a wise developer will use that exact same image locally.</p>
 
-<p>Sure, it takes a bit more resources locally, but running a virtual machine completely isolates changes to your local system from your development environment, allows you to share an exact environment with other developers, and if something goes wrong, you can always rebuild a new box with ease.</p>
 
-<p>Sounds like a daunting task? It&rsquo;s actually quite easy to get started&hellip; and its completely free! <a href="http://www.virtualbox.org">VirtualBox</a> is free software, provided by Oracle (by way of their Sun acquisition, and they haven&rsquo;t managed to ruin this at all). It provides the layer that reserves resources on your local machine (the host) and provides it to your virtual machine (the guest).</p>
 
-<p>You could use VirtualBox directly, but there&rsquo;s a few rough spots. I highly recommend another layer on top of VirtualBox that will limit your interactions with VirtualBox to installing it, and applying updates. That layer is <a href="http://www.vagrantup.com">Vagrant</a> which has become an indispensable tool and is widely used.</p>
 
-<p>The combination of VirtualBox and Vagrant is a powerful one. You can run it on Linux, Macs or Windows with ease. Give yourself a couple hours to install and get familiar with them and you&rsquo;ll never look back. It truly is a paradigm shift and you may wonder how you ever got anything done before.</p>
 
-<p>In future posts, I&rsquo;ll outline installing both and getting a simple application running.</p>
-]]></content>
-  </entry>
+
+
   
-  <entry>
-    <title type="html"><![CDATA[Rebooting Dev Blogging]]></title>
-    <link href="http://Ryan-K.github.io/blog/2013/05/28/rebooting-dev-blogging/"/>
-    <updated>2013-05-28T15:10:00-05:00</updated>
-    <id>http://Ryan-K.github.io/blog/2013/05/28/rebooting-dev-blogging</id>
-    <content type="html"><![CDATA[<p>Development has come a long way in the last 15 years. The scale of things that can be accomplished is amazing. Even more impressive is the rate at which things can be produced.</p>
 
-<p>There&rsquo;s a lot of great resources on the internet, but many of those conflict or are outdated. My goal of this blog is to provide a resource for developers while also tracking progress of some of my side projects.</p>
 
-<p>Much of the work I&rsquo;ve done over the last couple years, I haven&rsquo;t been able to talk about. There&rsquo;s many useful techniques that we used that are very general and could be applied to pretty much any situation to make a developer&rsquo;s life much easier.</p>
+<time datetime="2013-06-20T15:05:00-05:00" pubdate data-updated="true">Jun 20<span>th</span>, 2013</time>
+      
 
-<p>Ideally, this will be helpful for other developers, but if I&rsquo;m happy if it becomes a resource for myself.</p>
 
-<p>I&rsquo;m also hosting this via <a href="https://github.com/Ryan-K/ryan-k.github.com">a public repo</a> on GitHub pages and welcome any comments or contributions.</p>
-]]></content>
-  </entry>
+    </p>
+    
+      <div class="sharing">
   
-</feed>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://Ryan-K.github.io/blog/2013/06/20/first-steps/" data-via="RyanK" data-counturl="http://Ryan-K.github.io/blog/2013/06/20/first-steps/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/05/29/virtually-the-only-way-to-go/" title="Previous Post: Virtually the only way to go">&laquo; Virtually the only way to go</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/20/first-steps/">First Steps</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/29/virtually-the-only-way-to-go/">Virtually the Only Way to Go</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/28/rebooting-dev-blogging/">Rebooting Dev Blogging</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/Ryan-K">@Ryan-K</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'Ryan-K',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/105668868188801922975?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Ryan Kolak -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'adventuresindevelopment';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://Ryan-K.github.io/blog/2013/06/20/first-steps/';
+        var disqus_url = 'http://Ryan-K.github.io/blog/2013/06/20/first-steps/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
